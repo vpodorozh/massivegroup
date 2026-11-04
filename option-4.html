@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Massive Group – międzynarodowy transport drogowy z Bielawy</title>
-<meta name="description" content="Massive Group, międzynarodowa firma transportowa z Bielawy (od 2017 roku). Transport krajowy i międzynarodowy w Unii Europejskiej. Wybierz trasę i zapytaj o wycenę.">
+<title>Massive Group – międzynarodowy transport drogowy z Wysokiej</title>
+<meta name="description" content="Massive Group, międzynarodowa firma transportowa z Wysokiej (od 2017 roku). Transport krajowy i międzynarodowy w Unii Europejskiej. Wybierz trasę i zapytaj o wycenę.">
 <meta name="theme-color" content="#d6101a">
 <link rel="icon" type="image/png" href="assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.02em}
 p{margin:0}
@@ -87,7 +87,7 @@ section{padding:clamp(56px,8vw,112px) 0}
 .about-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(28px,6vw,96px)}
 .about h2,.offer h2,.contact h2,.reviews h2{font-size:clamp(32px,4.2vw,60px);font-weight:800}
 .about .since{margin-top:22px;color:var(--muted);max-width:34ch}
-.about .mark{width:min(220px,50%);margin-top:40px}
+.about .mark{width:min(240px,60%);height:auto;aspect-ratio:680/512;object-fit:contain;margin-top:48px}
 .adv{list-style:none;margin:0;padding:0}
 .adv li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:12px 32px;padding:28px 0;border-top:2px solid var(--ink)}
 .adv li:last-child{border-bottom:2px solid var(--ink)}
@@ -228,7 +228,7 @@ footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17p
       </div>
       <div class="readout" aria-live="polite">
         <div>
-          <div class="route-name" id="routeName">Bielawa <em>–</em> Monachium</div>
+          <div class="route-name" id="routeName">Wysoka <em>–</em> Monachium</div>
           <div class="km"><span id="km">0</span> km<small>w linii prostej</small></div>
         </div>
         <a class="btn" id="cta" href="#kontakt">Zapytaj o wycenę tej trasy</a>
@@ -241,7 +241,7 @@ footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17p
   <div class="wrap about-grid">
     <div>
       <h2 id="h-about">Transport, który dojeżdża na czas</h2>
-      <p class="since">Międzynarodowa firma transportowa z Bielawy na Dolnym Śląsku. Działamy od 2017 roku i mamy doświadczenie w przewozie towarów na terenie Unii Europejskiej.</p>
+      <p class="since">Międzynarodowa firma transportowa z Wysokiej na Dolnym Śląsku. Działamy od 2017 roku i mamy doświadczenie w przewozie towarów na terenie Unii Europejskiej.</p>
       <img class="mark" src="assets/logo-mark.png" alt="" width="680" height="512">
     </div>
     <ul class="adv">
@@ -275,7 +275,7 @@ footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17p
       <article class="offer-card dom">
         <div>
           <h3>Transport krajowy</h3>
-          <p>Przewozy na terenie Polski, z siedziby w Bielawie na Dolnym Śląsku.</p>
+          <p>Przewozy na terenie Polski, z siedziby w Wysokiej na Dolnym Śląsku.</p>
         </div>
         <a class="btn" href="#kontakt">Zapytaj o wycenę</a>
       </article>
@@ -303,14 +303,14 @@ footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17p
     <div>
       <h2 id="h-contact">Zapytaj o wycenę</h2>
       <address>
-        <div><span class="k">Adres</span><span class="plain">Massive Group<br>ul. Żeromskiego 9<br>58-260 Bielawa</span></div>
+        <div><span class="k">Adres</span><span class="plain">Massive Group<br>Jasna 9 / 8<br>52-200 Wysoka, Polska</span></div>
         <div><span class="k">E-mail</span><a href="mailto:office@massivegroup.com.pl">office@massivegroup.com.pl</a></div>
         <div><span class="k">Telefon</span><a href="tel:+48881360777">+48 881 360 777</a></div>
         <div><span class="k">Godziny pracy</span><span class="plain">pn–pt, 8:00–16:00</span></div>
       </address>
     </div>
     <form id="form" novalidate>
-      <div class="routebox" id="routebox"><span>Trasa:</span> <b id="routeLine">Bielawa – Monachium</b></div>
+      <div class="routebox" id="routebox"><span>Trasa:</span> <b id="routeLine">Wysoka – Monachium</b></div>
       <div class="field">
         <label for="name">Imię i nazwisko</label>
         <input id="name" name="name" autocomplete="name" required aria-describedby="e-name">
@@ -349,7 +349,7 @@ footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17p
 <script>
 (function(){
   var CITIES=[
-    {n:"Bielawa",lon:16.62,lat:50.69,g:"Dolny Śląsk"},
+    {n:"Wysoka",lon:17.00,lat:51.05,g:"Dolny Śląsk"},
     {n:"Gdańsk",lon:18.65,lat:54.35,g:"pl"},{n:"Kraków",lon:19.94,lat:50.06,g:"pl"},
     {n:"Poznań",lon:16.93,lat:52.41,g:"pl"},{n:"Warszawa",lon:21.01,lat:52.23,g:"pl"},
     {n:"Wrocław",lon:17.04,lat:51.11,g:"pl"},
@@ -423,7 +423,7 @@ footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17p
     return 2*R*Math.asin(Math.sqrt(h));
   }
 
-  var from=byName["Bielawa"],to=byName["Monachium"],prog=1,raf=0,t0=0;
+  var from=byName["Wysoka"],to=byName["Monachium"],prog=1,raf=0,t0=0;
   var DUR=1700;
   function curve(){
     var a=P(from.lon,from.lat),b=P(to.lon,to.lat);
@@ -464,7 +464,7 @@ footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17p
       var q=P(c.lon,c.lat),sel=(c===from||c===to);
       ctx.fillStyle=sel?"#fff":"#9b9ba4";
       ctx.beginPath();ctx.arc(q[0],q[1],sel?0:2.2,0,6.283);ctx.fill();
-      if(!sel&&big&&c.n!=="Wrocław"&&c.n!=="Bielawa"){
+      if(!sel&&big&&c.n!=="Wrocław"&&c.n!=="Wysoka"){
         var left=c.lon>22||c.n==="Paryż"||c.n==="Barcelona";
         halo(c.n,q[0]+(left?-6:6),q[1]+10,left?"right":"left","#9b9ba4","400 10px 'JetBrains Mono',monospace");
       }
@@ -513,7 +513,7 @@ footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17p
     function og(label,list){var g=document.createElement("optgroup");g.label=label;list.forEach(function(c){var o=document.createElement("option");o.value=o.textContent=c.n;g.appendChild(o)});return g}
     sel.appendChild(og("Polska",pl));sel.appendChild(og("Europa",eu));sel.value=val;
   }
-  fill(selFrom,"Bielawa");fill(selTo,"Monachium");
+  fill(selFrom,"Wysoka");fill(selTo,"Monachium");
 
   var msg=document.getElementById("msg"),dirty=false;
   msg.addEventListener("input",function(){dirty=true});
