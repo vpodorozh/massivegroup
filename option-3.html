@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Massive Group – międzynarodowy transport drogowy z Bielawy</title>
+<meta name="description" content="Massive Group, firma transportowa z Bielawy działająca od 2017 roku. Transport międzynarodowy i krajowy, doświadczenie w przewozie towarów na terenie Unii Europejskiej. Zapytaj o wycenę.">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#F2F3F5; --paper:#FFFFFF; --ink:#08090A; --mute:#565B63; --line:#D3D6DB;
+  --red:#D1121B; --red-deep:#A80E15;
+  --pad:clamp(16px,4vw,56px);
+  --cut:14deg;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Archivo",system-ui,sans-serif;font-stretch:100%;background:var(--ground);color:var(--ink);line-height:1.5;font-size:17px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px}
+.wrap{padding-inline:var(--pad);max-width:1480px;margin-inline:auto}
+.display{font-stretch:62%;font-weight:900;line-height:.9;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;gap:.6em;background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-stretch:90%;padding:16px 26px;border:0;font-size:1.05rem;cursor:pointer;font-family:inherit;transition:background .15s}
+.btn:hover{background:var(--red-deep)}
+.btn.ink{background:var(--ink)}
+.btn.ink:hover{background:#2a2d31}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:20;background:rgba(242,243,245,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.lockup{display:flex;align-items:center;gap:12px;text-decoration:none}
+.lockup img{height:30px;width:auto}
+.lockup span{font-stretch:75%;font-weight:900;font-size:1.35rem;letter-spacing:.01em;line-height:1;white-space:nowrap}
+.lockup span b{color:var(--red);font-weight:900}
+.nav ul{display:flex;gap:clamp(14px,2.4vw,34px);list-style:none;padding:0;align-items:center}
+.nav ul a{text-decoration:none;font-weight:600;font-stretch:90%;font-size:.98rem;padding:8px 0;border-bottom:2px solid transparent}
+.nav ul a:hover{border-color:var(--red)}
+.nav .btn{padding:10px 18px;font-size:.95rem}
+
+/* hero */
+.hero{position:relative;background:var(--paper);overflow:hidden;padding-bottom:clamp(60px,9vw,130px);clip-path:polygon(0 0,100% 0,100% calc(100% - clamp(30px,5vw,80px)),0 100%)}
+.hero .wrap{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding-top:clamp(28px,5vw,64px);align-items:end}
+.hero h1{grid-column:1/9;grid-row:1;font-size:clamp(76px,13.2vw,208px);position:relative;z-index:2;align-self:end}
+.hero h1 span{display:block}
+.hero h1 .r{color:var(--red)}
+.hero .mark{grid-column:8/13;grid-row:1;align-self:center;justify-self:end;width:100%;max-width:560px;position:relative;z-index:1}
+.hero .mark img{width:100%;height:auto}
+.hero .sub{grid-column:1/8;grid-row:2;margin-top:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.hero .sub p{max-width:46ch;font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.45;color:#23262A}
+.hero .meta{grid-column:8/13;grid-row:2;align-self:end;justify-self:end;text-align:right;font-stretch:80%;font-weight:700;color:var(--mute);font-size:1rem;line-height:1.35}
+.hero .meta strong{display:block;color:var(--ink);font-size:1.6rem;font-stretch:62%;font-weight:900}
+
+/* section base */
+section{padding-block:clamp(64px,9vw,128px)}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-bottom:clamp(32px,5vw,64px)}
+.sec-head h2{grid-column:1/8;font-size:clamp(44px,6.4vw,96px)}
+.sec-head p{grid-column:8/13;align-self:end;color:var(--mute);max-width:44ch}
+
+/* about */
+.adv{display:grid;grid-template-columns:repeat(3,1fr);column-gap:0;border-top:3px solid var(--ink)}
+.adv article{padding:28px 28px 8px 0;position:relative}
+.adv article+article{padding-left:28px;border-left:1px solid var(--line)}
+.adv .stop{width:18px;height:18px;border-radius:50%;border:5px solid var(--red);background:var(--paper);margin-bottom:22px}
+.adv h3{font-stretch:75%;font-weight:800;font-size:clamp(1.7rem,2.6vw,2.4rem);line-height:1;margin-bottom:14px}
+.adv p{color:#2c3035;max-width:34ch}
+.about-lead{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-bottom:clamp(40px,5vw,72px)}
+.about-lead p{grid-column:1/9;font-size:clamp(1.3rem,2.4vw,2rem);font-stretch:85%;font-weight:500;line-height:1.25;max-width:32em}
+.about-lead p b{font-weight:800}
+
+/* route */
+.route{background:var(--ground)}
+.line-wrap{background:var(--paper);border:1px solid var(--line);padding:clamp(20px,3vw,44px)}
+.line{position:relative;display:grid;grid-template-columns:repeat(3,1fr);padding-top:14px}
+.line::before{content:"";position:absolute;left:9px;right:0;top:23px;height:8px;background:repeating-linear-gradient(90deg,var(--red) 0 38px,transparent 38px 54px)}
+.line::after{content:"";position:absolute;right:0;top:12px;width:30px;height:30px;background:var(--red);clip-path:polygon(0 0,100% 50%,0 100%)}
+.line .st{position:relative;padding-top:56px;padding-right:24px}
+.line .st::before{content:"";position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;background:var(--paper);border:8px solid var(--ink)}
+.line .st:first-child::before{background:var(--red);border-color:var(--ink)}
+.line h3{font-stretch:70%;font-weight:900;font-size:clamp(1.8rem,3.4vw,3rem);line-height:1}
+.line p{color:var(--mute);margin-top:8px;max-width:30ch}
+
+/* offer board */
+.board{width:100%;border-collapse:collapse;background:var(--ink);color:#fff}
+.board caption{position:absolute;left:-999px}
+.board th{font-weight:600;font-stretch:90%;font-size:.9rem;color:#B8BCC2;text-align:left;padding:14px 24px;border-bottom:1px solid #34383d}
+.board td{padding:clamp(18px,2.6vw,34px) 24px;border-bottom:1px solid #34383d;vertical-align:top}
+.board tr:last-child td{border-bottom:0}
+.board th.dest{color:#fff;font-size:clamp(2.4rem,6vw,5.4rem);padding:clamp(18px,2.6vw,34px) 24px;border-bottom:1px solid #34383d}
+.board tr:last-child th.dest{border-bottom:0}
+.board .dest{font-stretch:62%;font-weight:900;font-size:clamp(2.4rem,6vw,5.4rem);line-height:.92;white-space:nowrap}
+.board .what{color:#D6D9DD;max-width:40ch}
+.board .zone{font-stretch:80%;font-weight:700;font-size:clamp(1.1rem,1.8vw,1.5rem);white-space:nowrap}
+.board .ok{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-stretch:85%;white-space:nowrap}
+.board .ok i{width:12px;height:12px;background:var(--red);border-radius:50%;box-shadow:0 0 0 4px rgba(209,18,27,.35)}
+
+/* reviews */
+.reviews{background:var(--paper)}
+.rev{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
+.rev .copy{grid-column:1/6}
+.rev h2{font-size:clamp(40px,5vw,76px);margin-bottom:18px}
+.rev .copy p{color:var(--mute);max-width:36ch}
+.rev .links{grid-column:7/13;border-top:3px solid var(--ink)}
+.rev .links a{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;font-stretch:70%;font-weight:900;font-size:clamp(2.2rem,4.4vw,3.8rem);line-height:1;gap:16px}
+.rev .links a small{font-stretch:100%;font-weight:600;font-size:.95rem;color:var(--mute)}
+.rev .links a:hover{color:var(--red)}
+.rev .links svg{flex:none;width:34px;height:34px}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;clip-path:polygon(0 clamp(30px,5vw,80px),100% 0,100% 100%,0 100%);margin-top:calc(-1 * clamp(30px,5vw,80px));padding-top:calc(clamp(64px,9vw,128px) + clamp(30px,5vw,80px));position:relative}
+.contact .grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:40px}
+.contact .info{grid-column:1/6}
+.contact h2{font-size:clamp(48px,6.6vw,104px);margin-bottom:28px}
+.contact address{font-style:normal;display:grid;gap:18px;color:#D6D9DD}
+.contact address a{color:#fff;font-weight:700;font-size:1.25rem;text-decoration:none;border-bottom:2px solid var(--red);width:fit-content}
+.contact address span{display:block;font-size:.9rem;color:#9EA3AA;margin-bottom:2px}
+.contact form{grid-column:7/13;display:grid;gap:18px}
+.field label{display:block;font-weight:600;font-stretch:90%;margin-bottom:6px;font-size:.95rem;color:#E6E8EB}
+.field input,.field textarea{width:100%;font:inherit;color:#fff;background:#14161A;border:1px solid #4a4f56;padding:14px 14px;border-radius:0}
+.field input:focus-visible,.field textarea:focus-visible{outline:3px solid #fff;outline-offset:2px;border-color:#fff}
+.field textarea{min-height:110px;resize:vertical}
+.field .err{display:none;color:#FF9A9F;font-size:.9rem;margin-top:6px}
+.field.bad .err{display:block}
+.field.bad input{border-color:#FF9A9F}
+.contact .btn{justify-self:start;margin-top:4px}
+.note{font-size:.9rem;color:#9EA3AA}
+footer{background:var(--ink);color:#9EA3AA;padding:28px 0 36px;border-top:1px solid #2b2f34;font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* one entrance on load */
+@keyframes slide{from{transform:translateX(60px);opacity:0}to{transform:none;opacity:1}}
+.hero .mark img{animation:slide .9s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+@media (max-width:900px){
+  .nav ul li:not(:last-child){display:none}
+  .hero{clip-path:polygon(0 0,100% 0,100% calc(100% - 30px),0 100%)}
+  .hero .wrap{display:block}
+  .hero .mark{width:44%;max-width:240px;margin:0 0 20px auto}
+  .hero h1{margin-top:0;font-size:clamp(70px,22vw,150px)}
+  .nav .btn{white-space:nowrap;padding:10px 14px;font-size:.88rem}
+  .lockup span{font-size:1.15rem}
+  .hero .meta{display:none}
+  .sec-head,.about-lead,.rev,.contact .grid{display:block}
+  .sec-head p{margin-top:16px}
+  .adv{grid-template-columns:1fr}
+  .adv article,.adv article+article{padding:24px 0 20px;border-left:0;border-bottom:1px solid var(--line)}
+  .line{grid-template-columns:1fr;padding:0 0 0 0}
+  .line::before{left:13px;right:auto;top:20px;bottom:30px;width:8px;height:auto;background:repeating-linear-gradient(180deg,var(--red) 0 30px,transparent 30px 44px)}
+  .line::after{display:none}
+  .line .st{padding:0 0 36px 52px}
+  .line .st::before{top:0}
+  .board thead{display:none}
+  .board,.board tbody,.board tr,.board td{display:block}
+  .board td{padding:6px 20px;border:0}
+  .board tr{padding:20px 0;border-bottom:1px solid #34383d}
+  .board tr:last-child{border:0}
+  .board .dest{white-space:normal;font-size:3rem}
+  .rev .links{margin-top:32px}
+  .contact .info{margin-bottom:36px}
+  .contact form{max-width:none}
+  .contact{clip-path:polygon(0 30px,100% 0,100% 100%,0 100%);margin-top:-30px;padding-top:calc(64px + 30px)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#kontakt">Przejdź do kontaktu</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="lockup" href="#top" aria-label="Massive Group, strona główna">
+      <img src="assets/logo-mark.png" alt="" width="40" height="30">
+      <span>MASSIVE <b>GROUP</b></span>
+    </a>
+    <nav aria-label="Główna">
+      <ul>
+        <li><a href="#o-nas">O firmie</a></li>
+        <li><a href="#zasieg">Zasięg</a></li>
+        <li><a href="#oferta">Oferta</a></li>
+        <li><a href="#opinie">Opinie</a></li>
+        <li><a class="btn" href="#kontakt">Zapytaj o wycenę</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1 class="display"><span>Dowozimy</span><span class="r">na czas.</span><span>W całej UE.</span></h1>
+    <div class="mark"><img src="assets/logo-mark.png" alt="Znak Massive Group: czerwona strzałka i przerywana linia drogi" width="680" height="512"></div>
+    <div class="sub">
+      <p>Międzynarodowa firma transportowa z Bielawy. Przewozimy towary po Polsce i na terenie Unii Europejskiej od 2017 roku.</p>
+      <a class="btn" href="#kontakt">Zapytaj o wycenę</a>
+    </div>
+    <div class="meta"><strong>od 2017</strong>Bielawa, Dolny Śląsk</div>
+  </div>
+</div>
+
+<section id="o-nas">
+  <div class="wrap">
+    <div class="about-lead">
+      <p>Massive Group to firma, która <b>zna trasy po Europie</b>. Doświadczenie w przewozie towarów na terenie Unii Europejskiej łączymy z logistyką, która pracuje razem z kierowcami.</p>
+    </div>
+    <div class="adv">
+      <article>
+        <div class="stop" aria-hidden="true"></div>
+        <h3>Nowoczesna flota</h3>
+        <p>Sprawne pojazdy to dostawa zawsze na czas, bez niespodzianek na trasie.</p>
+      </article>
+      <article>
+        <div class="stop" aria-hidden="true"></div>
+        <h3>Kompetentni ludzie</h3>
+        <p>Pracownicy z doświadczeniem w transporcie międzynarodowym dbają o to, by dostawy były kompletne.</p>
+      </article>
+      <article>
+        <div class="stop" aria-hidden="true"></div>
+        <h3>Sprawna logistyka</h3>
+        <p>Dyspozytorzy współpracują z kierowcami na bieżąco, dlatego liczy się terminowość.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="route" id="zasieg" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="display">Z Bielawy w stronę Europy</h2>
+      <p>Zaczynamy na Dolnym Śląsku. Jedziemy przez Polskę i dalej, po całej Unii Europejskiej.</p>
+    </div>
+    <div class="line-wrap">
+      <div class="line">
+        <div class="st"><h3>Bielawa</h3><p>Siedziba firmy, ul. Żeromskiego 9</p></div>
+        <div class="st"><h3>Polska</h3><p>Transport krajowy</p></div>
+        <div class="st"><h3>Unia Europejska</h3><p>Transport międzynarodowy</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="oferta" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="display">Oferta</h2>
+      <p>Dwa rodzaje transportu, jeden standard: towar ma dotrzeć kompletny i w terminie.</p>
+    </div>
+    <table class="board">
+      <caption>Oferta transportowa Massive Group</caption>
+      <thead><tr><th scope="col">Usługa</th><th scope="col">Zakres</th><th scope="col">Opis</th><th scope="col">Dostawa</th></tr></thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="dest" style="text-align:left">Krajowy</th>
+          <td class="zone">Polska</td>
+          <td class="what">Transport towarów na terenie kraju, planowany razem z kierowcą.</td>
+          <td><span class="ok"><i></i>Na czas</span></td>
+        </tr>
+        <tr>
+          <th scope="row" class="dest" style="text-align:left">Międzynarodowy</th>
+          <td class="zone">Unia Europejska</td>
+          <td class="what">Przewozy międzynarodowe realizowane przez ludzi z doświadczeniem w tej branży.</td>
+          <td><span class="ok"><i></i>Na czas</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="reviews" id="opinie">
+  <div class="wrap rev">
+    <div class="copy">
+      <h2 class="display">Sprawdź nas u innych</h2>
+      <p>Opinie o Massive Group znajdziesz na giełdach transportowych, z których korzystają przewoźnicy i spedytorzy.</p>
+    </div>
+    <div class="links">
+      <a href="https://trans.eu" target="_blank" rel="noopener noreferrer"><span>trans.eu <small>Opinie o firmie</small></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#D1121B" stroke-width="3" aria-hidden="true"><path d="M5 19L19 5M8 5h11v11"/></svg></a>
+      <a href="https://www.timocom.com" target="_blank" rel="noopener noreferrer"><span>timocom.com <small>Opinie o firmie</small></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#D1121B" stroke-width="3" aria-hidden="true"><path d="M5 19L19 5M8 5h11v11"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap grid">
+    <div class="info">
+      <h2 class="display">Zapytaj o wycenę</h2>
+      <address>
+        <div><span>Telefon</span><a href="tel:+48881360777">+48 881 360 777</a></div>
+        <div><span>E-mail</span><a href="mailto:office@massivegroup.com.pl">office@massivegroup.com.pl</a></div>
+        <div><span>Adres</span>Massive Group<br>ul. Żeromskiego 9<br>58-260 Bielawa</div>
+        <div><span>Godziny pracy</span>pn–pt, 8:00–16:00</div>
+      </address>
+    </div>
+    <form id="f" novalidate>
+      <div class="field"><label for="n">Imię i nazwisko</label><input id="n" name="n" autocomplete="name" required><div class="err">Podaj imię i nazwisko.</div></div>
+      <div class="field"><label for="e">E-mail</label><input id="e" name="e" type="email" autocomplete="email" required><div class="err">Podaj poprawny adres e-mail.</div></div>
+      <div class="field"><label for="t">Telefon</label><input id="t" name="t" type="tel" autocomplete="tel" required><div class="err">Podaj numer telefonu (min. 7 cyfr).</div></div>
+      <div class="field"><label for="m">Wiadomość (opcjonalnie)</label><textarea id="m" name="m"></textarea></div>
+      <button class="btn" type="submit">Zapytaj o wycenę</button>
+      <p class="note" id="st" role="status">Formularz otworzy Twoją aplikację pocztową z gotową wiadomością.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>&copy; Massive Group</span><span>ul. Żeromskiego 9, 58-260 Bielawa</span></div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('f');
+  function bad(id,cond){var w=document.getElementById(id).closest('.field');w.classList.toggle('bad',cond);return cond}
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var n=f.n.value.trim(),e=f.e.value.trim(),t=f.t.value.trim(),m=f.m.value.trim();
+    var b1=bad('n',n.length<2),
+        b2=bad('e',!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)),
+        b3=bad('t',t.replace(/\D/g,'').length<7);
+    if(b1||b2||b3){var first=f.querySelector('.bad input');if(first)first.focus();return}
+    var body='Imię i nazwisko: '+n+'\nE-mail: '+e+'\nTelefon: '+t+(m?'\n\n'+m:'');
+    location.href='mailto:office@massivegroup.com.pl?subject='+encodeURIComponent('Zapytanie o wycenę')+'&body='+encodeURIComponent(body);
+    document.getElementById('st').textContent='Otwieramy wiadomość w Twojej aplikacji pocztowej.';
+  });
+})();
+</script>
+</body>
+</html>

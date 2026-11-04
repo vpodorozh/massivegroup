@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Massive Group – międzynarodowy transport drogowy z Bielawy</title>
+<meta name="description" content="Massive Group, międzynarodowa firma transportowa z Bielawy (od 2017 roku). Transport krajowy i międzynarodowy w Unii Europejskiej. Wybierz trasę i zapytaj o wycenę.">
+<meta name="theme-color" content="#d6101a">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#d6101a; --red-deep:#a30d14; --ink:#050505; --panel:#0c0c0d; --paper:#efeeec; --white:#fff;
+  --muted:#53535a; --line:#d4d2ce; --dot:#2b2b30;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --gut:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.02em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.dark :focus-visible,.on-dark:focus-visible{outline-color:#fff}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;z-index:100}
+.skip:focus{left:8px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:800 19px/1 var(--display);letter-spacing:.01em;margin-right:auto}
+.brand img{height:30px;width:auto}
+.brand span{white-space:nowrap}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:15px;font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
+.nav ul a:hover{border-color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--red);color:#fff;border:0;border-radius:3px;font:600 16px/1 var(--body);padding:15px 22px;text-decoration:none;cursor:pointer;min-height:48px;transition:background .15s,transform .15s}
+.btn:hover{background:var(--red-deep)}
+.btn:active{transform:translateY(1px)}
+.btn[aria-disabled="true"]{background:#44444a;color:#bdbdc2;cursor:not-allowed}
+.nav .btn{padding:11px 16px;min-height:42px;font-size:15px}
+
+/* hero */
+.hero{padding:clamp(28px,4vw,56px) 0 clamp(32px,4vw,64px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:start}
+.hero h1{font-size:clamp(38px,4.8vw,70px);font-weight:800;font-stretch:75%;max-width:11ch}
+.lead{margin-top:20px;font-size:18px;color:var(--muted);max-width:44ch}
+.tool{margin-top:28px;display:grid;gap:14px;border:0;padding:0;min-width:0}
+.field{display:grid;gap:6px}
+.field label,.field .lab{font-weight:600;font-size:14px}
+.field small{font-weight:400;color:var(--muted)}
+select,input,textarea{width:100%;font:500 17px/1.2 var(--body);color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:3px;padding:13px 14px;min-height:50px}
+select{appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23050505' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer}
+.pair{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}
+.pair .fields{display:grid;gap:14px}
+.swap{width:50px;height:50px;border:2px solid var(--ink);background:#fff;border-radius:3px;cursor:pointer;display:grid;place-items:center;margin-bottom:0;align-self:center;transition:background .15s}
+.swap:hover{background:var(--ink)}
+.swap:hover svg{stroke:#fff}
+.swap svg{stroke:var(--ink)}
+.note{font-size:14px;color:var(--muted);max-width:46ch}
+
+/* map panel */
+.panel{background:var(--panel);color:#fff;border-radius:6px;overflow:hidden;position:relative;box-shadow:0 0 0 1px #000, 10px 10px 0 var(--red)}
+.panel-top{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid #26262b;font:400 12px/1.3 var(--mono);color:#a9a9b1}
+.panel-top b{color:#fff;font-weight:500}
+.map{position:relative;aspect-ratio:1.42/1}
+.map canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.readout{display:grid;grid-template-columns:1fr auto;gap:16px 24px;align-items:center;padding:16px 18px 18px;border-top:1px solid #26262b}
+.route-name{font:700 clamp(20px,2.3vw,28px)/1.1 var(--display)}
+.route-name em{font-style:normal;color:#ff4b52}
+.km{font:500 clamp(30px,3.4vw,46px)/1 var(--mono);letter-spacing:-.04em;margin-top:8px;font-variant-numeric:tabular-nums}
+.km small{font:400 13px/1.3 var(--mono);letter-spacing:0;color:#a9a9b1;margin-left:8px}
+.readout .btn{white-space:nowrap}
+.legend{display:flex;gap:18px;font:400 12px/1 var(--mono);color:#a9a9b1;padding:0 18px 16px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+
+/* sections */
+section{padding:clamp(56px,8vw,112px) 0}
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(28px,6vw,96px)}
+.about h2,.offer h2,.contact h2,.reviews h2{font-size:clamp(32px,4.2vw,60px);font-weight:800}
+.about .since{margin-top:22px;color:var(--muted);max-width:34ch}
+.about .mark{width:min(220px,50%);margin-top:40px}
+.adv{list-style:none;margin:0;padding:0}
+.adv li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:12px 32px;padding:28px 0;border-top:2px solid var(--ink)}
+.adv li:last-child{border-bottom:2px solid var(--ink)}
+.adv h3{font-size:clamp(24px,2.6vw,36px);font-weight:700}
+.adv p{color:var(--muted);max-width:44ch}
+.adv strong{color:var(--ink);font-weight:600}
+
+.offer-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:20px;margin-top:40px}
+.offer-card{padding:clamp(24px,3vw,44px);min-height:340px;display:flex;flex-direction:column;justify-content:space-between;gap:36px;border-radius:4px}
+.offer-card h3{font-size:clamp(28px,3.2vw,46px);font-weight:800}
+.offer-card p{margin-top:14px;max-width:42ch}
+.intl{background:var(--red);color:#fff}
+.dom{background:#fff;border:2px solid var(--ink)}
+.dom p{color:var(--muted)}
+.offer-card .btn{align-self:flex-start}
+.intl .btn{background:var(--ink)}
+.intl .btn:hover{background:#222}
+.dom .btn{background:var(--ink)}
+.dom .btn:hover{background:var(--red)}
+.intl :focus-visible{outline-color:#fff}
+
+.reviews{background:var(--ink);color:#fff}
+.reviews-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,6vw,96px);align-items:end}
+.reviews p.lead{color:#b9b9c0}
+.rev-links{display:grid;gap:0}
+.rev-links a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px 0;border-top:1px solid #3a3a40;text-decoration:none;font:700 clamp(28px,4vw,52px)/1 var(--display);transition:color .15s,padding .2s}
+.rev-links a:last-child{border-bottom:1px solid #3a3a40}
+.rev-links a:hover{color:#ff4b52;padding-left:12px}
+.rev-links svg{flex:none;stroke:currentColor}
+
+.contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,6vw,96px)}
+.contact address{font-style:normal;margin-top:28px;display:grid;gap:18px}
+.contact address div{display:grid;gap:2px}
+.contact address .k{font-size:14px;color:var(--muted);font-weight:600}
+.contact address a{font:500 20px/1.3 var(--mono);text-decoration:none;border-bottom:2px solid var(--red);width:fit-content;overflow-wrap:anywhere}
+.contact address a:hover{background:var(--red);color:#fff}
+.contact address .plain{font-size:19px;font-weight:500}
+form{background:#fff;border:2px solid var(--ink);border-radius:4px;padding:clamp(20px,3vw,36px);display:grid;gap:18px}
+.routebox{display:flex;gap:12px;align-items:center;background:var(--ink);color:#fff;border-radius:3px;padding:14px 16px;font:500 15px/1.3 var(--mono)}
+.routebox b{color:#ff4b52;font-weight:700}
+textarea{min-height:110px;resize:vertical;line-height:1.4}
+.err{color:#b00811;font-size:14px;font-weight:600;min-height:0}
+[aria-invalid="true"]{border-color:#b00811;background:#fff5f5}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.status{font-size:15px;color:var(--muted)}
+.hours{font-size:14px;color:var(--muted)}
+
+footer{background:var(--ink);color:#c8c8ce;padding:40px 0;font-size:15px}
+footer .wrap{display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+footer img{height:34px;width:auto}
+footer .f-brand{display:flex;align-items:center;gap:12px;color:#fff;font:800 17px/1 var(--display)}
+
+@media (max-width:980px){
+  .nav ul{display:none}
+  .hero-grid,.about-grid,.offer-grid,.reviews-grid,.contact-grid{grid-template-columns:minmax(0,1fr)}
+  .hero h1{max-width:16ch}
+  .panel{box-shadow:0 0 0 1px #000,6px 6px 0 var(--red);margin-right:6px}
+  .offer-card{min-height:0}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .brand{font-size:16px}
+  .brand img{height:26px}
+  .nav .wrap{gap:12px}
+  .nav .btn{padding:10px 12px;font-size:14px}
+  .adv li{grid-template-columns:minmax(0,1fr)}
+  .readout{grid-template-columns:minmax(0,1fr)}
+  .readout .btn{width:100%}
+  .form-row{grid-template-columns:minmax(0,1fr)}
+  .map{aspect-ratio:1.02/1}
+  .about .mark{width:110px;margin-top:24px}
+  .panel-top span:last-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#trasa">Przejdź do treści</a>
+
+<header class="nav dark">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Massive Group – strona główna">
+      <img src="assets/logo-mark-white.png" alt="" width="40" height="30">
+      <span>MASSIVE GROUP</span>
+    </a>
+    <nav aria-label="Główna">
+      <ul>
+        <li><a href="#o-firmie">O firmie</a></li>
+        <li><a href="#oferta">Oferta</a></li>
+        <li><a href="#opinie">Opinie</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#kontakt">Zapytaj o wycenę</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="trasa" aria-labelledby="h-hero" style="padding-top:clamp(28px,4vw,56px)">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="h-hero">Wybierz trasę. Zobacz ją na mapie.</h1>
+      <p class="lead">Massive Group przewozi towary po całej Unii Europejskiej. Wskaż miejsce załadunku i rozładunku, a przekażemy tę trasę do zapytania o wycenę.</p>
+
+      <fieldset class="tool">
+        <legend class="sr" style="position:absolute;left:-999px">Planer trasy</legend>
+        <div class="pair">
+          <div class="fields">
+            <div class="field">
+              <label for="from">Załadunek</label>
+              <select id="from" name="from"></select>
+            </div>
+            <div class="field">
+              <label for="to">Rozładunek</label>
+              <select id="to" name="to"></select>
+            </div>
+          </div>
+          <button type="button" class="swap" id="swap" aria-label="Zamień załadunek z rozładunkiem">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke-width="2" stroke-linecap="square"><path d="M7 3v16M3 15l4 4 4-4M15 19V3M11 7l4-4 4 4"/></svg>
+          </button>
+        </div>
+        <p class="note">Odległość jest orientacyjna: liczymy ją w linii prostej, nie po drogach. Cenę ustalamy indywidualnie.</p>
+      </fieldset>
+    </div>
+
+    <div class="panel dark">
+      <div class="panel-top"><span><b>Mapa Europy</b></span><span>przybliżona, bez granic</span></div>
+      <div class="map">
+        <canvas id="map" role="img" aria-label="Schematyczna mapa Europy z zaznaczoną trasą między wybranymi miastami"></canvas>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><i style="background:var(--red)"></i>załadunek</span>
+        <span><i style="background:#fff"></i>rozładunek</span>
+        <span><i style="background:#5a2226"></i>Polska</span>
+      </div>
+      <div class="readout" aria-live="polite">
+        <div>
+          <div class="route-name" id="routeName">Bielawa <em>–</em> Monachium</div>
+          <div class="km"><span id="km">0</span> km<small>w linii prostej</small></div>
+        </div>
+        <a class="btn" id="cta" href="#kontakt">Zapytaj o wycenę tej trasy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="o-firmie" aria-labelledby="h-about">
+  <div class="wrap about-grid">
+    <div>
+      <h2 id="h-about">Transport, który dojeżdża na czas</h2>
+      <p class="since">Międzynarodowa firma transportowa z Bielawy na Dolnym Śląsku. Działamy od 2017 roku i mamy doświadczenie w przewozie towarów na terenie Unii Europejskiej.</p>
+      <img class="mark" src="assets/logo-mark.png" alt="" width="680" height="512">
+    </div>
+    <ul class="adv">
+      <li>
+        <h3>Nowoczesna flota</h3>
+        <p>Pojazdy, na których można polegać. <strong>Dostawa zawsze na czas.</strong></p>
+      </li>
+      <li>
+        <h3>Kompetentni pracownicy</h3>
+        <p>Zespół z doświadczeniem w transporcie międzynarodowym. <strong>Dostawy kompletne.</strong></p>
+      </li>
+      <li>
+        <h3>Sprawna logistyka</h3>
+        <p>Dobra współpraca z kierowcami na każdym etapie trasy. <strong>Terminowość.</strong></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="offer" id="oferta" aria-labelledby="h-offer">
+  <div class="wrap">
+    <h2 id="h-offer">Oferta</h2>
+    <div class="offer-grid">
+      <article class="offer-card intl">
+        <div>
+          <h3>Transport międzynarodowy</h3>
+          <p>Przewozy towarów na terenie Unii Europejskiej, realizowane przez zespół z doświadczeniem w pracy na trasach międzynarodowych.</p>
+        </div>
+        <a class="btn" href="#trasa">Sprawdź swoją trasę</a>
+      </article>
+      <article class="offer-card dom">
+        <div>
+          <h3>Transport krajowy</h3>
+          <p>Przewozy na terenie Polski, z siedziby w Bielawie na Dolnym Śląsku.</p>
+        </div>
+        <a class="btn" href="#kontakt">Zapytaj o wycenę</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="opinie" aria-labelledby="h-rev">
+  <div class="wrap reviews-grid">
+    <div>
+      <h2 id="h-rev">Sprawdź, co o nas piszą</h2>
+      <p class="lead" style="margin-top:18px">Opinie o współpracy z Massive Group znajdziesz na giełdach transportowych.</p>
+    </div>
+    <div class="rev-links dark">
+      <a href="https://www.trans.eu" target="_blank" rel="noopener noreferrer">trans.eu
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke-width="3" aria-hidden="true"><path d="M8 26L26 8M12 8h14v14"/></svg><span style="position:absolute;left:-999px">(otwiera się w nowej karcie)</span></a>
+      <a href="https://www.timocom.com" target="_blank" rel="noopener noreferrer">timocom.com
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke-width="3" aria-hidden="true"><path d="M8 26L26 8M12 8h14v14"/></svg><span style="position:absolute;left:-999px">(otwiera się w nowej karcie)</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt" aria-labelledby="h-contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="h-contact">Zapytaj o wycenę</h2>
+      <address>
+        <div><span class="k">Adres</span><span class="plain">Massive Group<br>ul. Żeromskiego 9<br>58-260 Bielawa</span></div>
+        <div><span class="k">E-mail</span><a href="mailto:office@massivegroup.com.pl">office@massivegroup.com.pl</a></div>
+        <div><span class="k">Telefon</span><a href="tel:+48881360777">+48 881 360 777</a></div>
+        <div><span class="k">Godziny pracy</span><span class="plain">pn–pt, 8:00–16:00</span></div>
+      </address>
+    </div>
+    <form id="form" novalidate>
+      <div class="routebox" id="routebox"><span>Trasa:</span> <b id="routeLine">Bielawa – Monachium</b></div>
+      <div class="field">
+        <label for="name">Imię i nazwisko</label>
+        <input id="name" name="name" autocomplete="name" required aria-describedby="e-name">
+        <span class="err" id="e-name" role="alert"></span>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
+          <span class="err" id="e-email" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="phone">Telefon</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="e-phone">
+          <span class="err" id="e-phone" role="alert"></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="msg">Wiadomość <small>(opcjonalnie)</small></label>
+        <textarea id="msg" name="msg"></textarea>
+      </div>
+      <button class="btn" type="submit">Zapytaj o wycenę</button>
+      <p class="status" id="status" role="status">Formularz otworzy Twój program pocztowy z gotową wiadomością do office@massivegroup.com.pl.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand"><img src="assets/logo-mark-white.png" alt="" width="45" height="34"><span>MASSIVE GROUP</span></div>
+    <p>&copy; Massive Group</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var CITIES=[
+    {n:"Bielawa",lon:16.62,lat:50.69,g:"Dolny Śląsk"},
+    {n:"Gdańsk",lon:18.65,lat:54.35,g:"pl"},{n:"Kraków",lon:19.94,lat:50.06,g:"pl"},
+    {n:"Poznań",lon:16.93,lat:52.41,g:"pl"},{n:"Warszawa",lon:21.01,lat:52.23,g:"pl"},
+    {n:"Wrocław",lon:17.04,lat:51.11,g:"pl"},
+    {n:"Amsterdam",lon:4.90,lat:52.37},{n:"Barcelona",lon:2.17,lat:41.39},
+    {n:"Berlin",lon:13.40,lat:52.52},{n:"Bruksela",lon:4.35,lat:50.85},
+    {n:"Budapeszt",lon:19.04,lat:47.50},{n:"Kopenhaga",lon:12.57,lat:55.68},
+    {n:"Mediolan",lon:9.19,lat:45.46},{n:"Monachium",lon:11.58,lat:48.14},
+    {n:"Paryż",lon:2.35,lat:48.86},{n:"Praga",lon:14.42,lat:50.08},
+    {n:"Rzym",lon:12.50,lat:41.90},{n:"Wiedeń",lon:16.37,lat:48.21}
+  ];
+  var byName={};CITIES.forEach(function(c){byName[c.n]=c});
+
+  // coarse land polygons [lon,lat]
+  var LAND=[
+    [[-9.5,37],[-7,37],[-5.3,36],[-2,36.8],[-.5,38.7],[.5,40.5],[3,42.4],[4,43.4],[6,43],[7.5,43.8],[8.8,44.4],[10.5,43.5],[12,42],[14,40.8],[15.7,40],[16,39.5],[15.7,38],[16.5,39],[17,39.3],[18.5,40.2],[16,41.9],[14.5,42.2],[13.6,43.5],[12.5,44],[12.3,45.3],[13.5,45.7],[14.5,45],[16,43.5],[18.5,42.5],[19.4,41.8],[19.5,40],[21,38],[22.5,36.5],[23.5,38],[24,40],[26.5,41],[28,42],[28.5,44],[30,45.5],[33,45.5],[33,60],[28,59.8],[24,59.4],[24,57.3],[21,57],[21,55],[18.5,54.7],[14,54],[12,54.2],[10,54.8],[10.8,56],[10.5,57.7],[8,57],[8.5,54],[5,53],[3.5,51.3],[1.5,50.5],[-1.5,48.7],[-4.5,48],[-1.5,46],[-2,43.5],[-9.2,43],[-9,39]],
+    [[5,58.5],[5,62],[10,64],[14,67.5],[18,69.5],[25,71],[33,70],[33,61],[29,61.2],[28,60.5],[23,60],[21.5,61],[21.5,63],[25,65.5],[22,65.8],[17.5,62.5],[18.5,60.5],[16.5,57.5],[14.5,56],[12.5,56],[11,58.5],[8,58]],
+    [[-5.5,50],[1.5,51],[1.7,52.7],[0,53.5],[-1.5,55],[-2,57.5],[-3.5,58.6],[-5.5,58.5],[-6,56.5],[-5,55],[-3,54.8],[-3,53.4],[-4.7,52.8],[-4.2,51.6]],
+    [[-10,51.7],[-6,52],[-6,54],[-7.5,55.3],[-9,54.2],[-10,53]],
+    [[12.5,37.6],[12.5,38],[15.6,38.2],[15,36.7]],
+    [[8.2,41],[9.7,41],[9.6,39],[8.5,39]],
+    [[10.9,55.2],[12.3,55.4],[12.5,56],[11,56]]
+  ];
+  var POLAND=[[14.2,53.9],[14.1,52.8],[15,51],[16.5,50.2],[18.8,49.5],[22.5,49],[24.1,50.4],[23.5,52.2],[23.5,53.9],[19.5,54.4]];
+  var LON0=-11,LON1=32,LAT0=35.5,LAT1=61,K=Math.cos(50*Math.PI/180);
+
+  function inPoly(p,x,y){var c=false;for(var i=0,j=p.length-1;i<p.length;j=i++){var a=p[i],b=p[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c}
+  function onLand(x,y){for(var i=0;i<LAND.length;i++)if(inPoly(LAND[i],x,y))return true;return false}
+
+  var cv=document.getElementById("map"),ctx=cv.getContext("2d");
+  var base=document.createElement("canvas"),bctx=base.getContext("2d");
+  var W=0,H=0,dpr=1,S=1,OX=0,OY=0;
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function P(lon,lat){return[OX+(lon-LON0)*K*S,OY+(LAT1-lat)*S]}
+
+  function layout(){
+    var r=cv.getBoundingClientRect();if(!r.width)return;
+    dpr=Math.min(window.devicePixelRatio||1,2);W=r.width;H=r.height;
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);base.width=cv.width;base.height=cv.height;
+    var padL=34,padB=24,padT=12,padR=12;
+    var wu=(LON1-LON0)*K,hu=LAT1-LAT0;
+    S=Math.min((W-padL-padR)/wu,(H-padT-padB)/hu);
+    OX=padL+((W-padL-padR)-wu*S)/2;OY=padT+((H-padT-padB)-hu*S)/2;
+    drawBase();
+  }
+
+  function drawBase(){
+    var c=bctx;c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,H);
+    var step=W<500?6:8, x0=P(LON0,LAT1),x1=P(LON1,LAT0);
+    var rr=step*(W<500?.34:.4);
+    for(var y=x0[1]+step/2;y<x1[1];y+=step){
+      for(var x=x0[0]+step/2;x<x1[0];x+=step){
+        var lon=LON0+(x-OX)/(K*S),lat=LAT1-(y-OY)/S;
+        if(!onLand(lon,lat))continue;
+        c.fillStyle=inPoly(POLAND,lon,lat)?"#6a2a2e":"#33333a";
+        c.beginPath();c.arc(x,y,rr,0,6.283);c.fill();
+      }
+    }
+    // frame + ticks
+    c.strokeStyle="#2a2a30";c.lineWidth=1;c.strokeRect(x0[0]+.5,x0[1]+.5,x1[0]-x0[0],x1[1]-x0[1]);
+    c.fillStyle="#8c8c95";c.font="10px 'JetBrains Mono',monospace";c.textBaseline="middle";
+    var lat,lon;
+    c.textAlign="right";
+    for(lat=40;lat<=60;lat+=10){var p=P(LON0,lat);c.fillRect(p[0],p[1],5,1);c.fillText(lat+"°N",p[0]-5,p[1])}
+    c.textAlign="center";
+    for(lon=-10;lon<=30;lon+=10){var q=P(lon,LAT0);c.fillRect(q[0],q[1]-5,1,5);c.fillText(Math.abs(lon)+"°"+(lon<0?"W":"E"),q[0],q[1]+11)}
+  }
+
+  function haversine(a,b){
+    var R=6371,t=Math.PI/180,dl=(b.lat-a.lat)*t,dn=(b.lon-a.lon)*t;
+    var h=Math.sin(dl/2)*Math.sin(dl/2)+Math.cos(a.lat*t)*Math.cos(b.lat*t)*Math.sin(dn/2)*Math.sin(dn/2);
+    return 2*R*Math.asin(Math.sqrt(h));
+  }
+
+  var from=byName["Bielawa"],to=byName["Monachium"],prog=1,raf=0,t0=0;
+  var DUR=1700;
+  function curve(){
+    var a=P(from.lon,from.lat),b=P(to.lon,to.lat);
+    var dx=b[0]-a[0],dy=b[1]-a[1],len=Math.hypot(dx,dy)||1;
+    var nx=-dy/len,ny=dx/len; if(ny>0){nx=-nx;ny=-ny}
+    var bulge=len*.22;
+    return{a:a,b:b,c:[(a[0]+b[0])/2+nx*bulge,(a[1]+b[1])/2+ny*bulge],len:len};
+  }
+  function pt(cu,t){var u=1-t;return[u*u*cu.a[0]+2*u*t*cu.c[0]+t*t*cu.b[0],u*u*cu.a[1]+2*u*t*cu.c[1]+t*t*cu.b[1]]}
+  function tan(cu,t){var u=1-t;return Math.atan2(2*u*(cu.c[1]-cu.a[1])+2*t*(cu.b[1]-cu.c[1]),2*u*(cu.c[0]-cu.a[0])+2*t*(cu.b[0]-cu.c[0]))}
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+
+  function halo(text,x,y,align,color,font){
+    ctx.font=font;ctx.textAlign=align;ctx.textBaseline="middle";
+    ctx.lineWidth=4;ctx.strokeStyle="#0c0c0d";ctx.lineJoin="round";ctx.strokeText(text,x,y);
+    ctx.fillStyle=color;ctx.fillText(text,x,y);
+  }
+
+  function truck(x,y,ang,s){
+    ctx.save();ctx.translate(x,y);ctx.rotate(ang);
+    if(Math.cos(ang)<0)ctx.scale(1,-1);
+    ctx.scale(s,s);
+    ctx.lineWidth=2.5;ctx.strokeStyle="#0c0c0d";
+    // trailer
+    ctx.fillStyle="#fff";ctx.beginPath();ctx.rect(-17,-5.5,21,11);ctx.fill();ctx.stroke();
+    // cab
+    ctx.fillStyle="#d6101a";ctx.beginPath();ctx.rect(5,-4.5,11,9);ctx.fill();ctx.stroke();
+    ctx.fillStyle="#0c0c0d";ctx.fillRect(12,-3,3,6);
+    ctx.restore();
+  }
+
+  function draw(p){
+    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
+    ctx.drawImage(base,0,0,W,H);
+    var big=W>=560;
+    // faint labels
+    CITIES.forEach(function(c){
+      var q=P(c.lon,c.lat),sel=(c===from||c===to);
+      ctx.fillStyle=sel?"#fff":"#9b9ba4";
+      ctx.beginPath();ctx.arc(q[0],q[1],sel?0:2.2,0,6.283);ctx.fill();
+      if(!sel&&big&&c.n!=="Wrocław"&&c.n!=="Bielawa"){
+        var left=c.lon>22||c.n==="Paryż"||c.n==="Barcelona";
+        halo(c.n,q[0]+(left?-6:6),q[1]+10,left?"right":"left","#9b9ba4","400 10px 'JetBrains Mono',monospace");
+      }
+    });
+    var cu=curve();
+    // ghost path
+    ctx.lineCap="butt";ctx.lineWidth=1.5;ctx.strokeStyle="rgba(255,255,255,.28)";ctx.setLineDash([2,6]);
+    ctx.beginPath();ctx.moveTo(cu.a[0],cu.a[1]);ctx.quadraticCurveTo(cu.c[0],cu.c[1],cu.b[0],cu.b[1]);ctx.stroke();
+    // live path
+    if(p>0){
+      ctx.setLineDash([12,8]);ctx.lineWidth=4;ctx.strokeStyle="#ff2a33";
+      ctx.beginPath();var n=Math.max(2,Math.ceil(90*p));
+      for(var i=0;i<=n;i++){var m=pt(cu,p*i/n);if(i)ctx.lineTo(m[0],m[1]);else ctx.moveTo(m[0],m[1])}
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    // nodes
+    var A=cu.a,B=cu.b,fs=W<560?11:12;
+    ctx.fillStyle="#d6101a";ctx.strokeStyle="#fff";ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(A[0],A[1],6.5,0,6.283);ctx.fill();ctx.stroke();
+    ctx.fillStyle="#fff";ctx.strokeStyle="#d6101a";ctx.beginPath();ctx.arc(B[0],B[1],6.5,0,6.283);ctx.fill();ctx.stroke();
+    var same=from===to;
+    var aLeft=B[0]>=A[0],fnt="700 "+fs+"px 'JetBrains Mono',monospace";
+    halo(from.n,A[0]+(aLeft?-11:11),A[1]+(same?-14:16),aLeft?"right":"left","#fff",fnt);
+    if(!same)halo(to.n,B[0]+(aLeft?11:-11),B[1]-16,aLeft?"left":"right","#fff",fnt);
+    // truck
+    var tp=pt(cu,p),ang=tan(cu,p);
+    if(!same)truck(tp[0],tp[1],ang,W<560?.85:1.1);
+  }
+
+  function frame(ts){
+    if(!t0)t0=ts;prog=Math.min(1,(ts-t0)/DUR);
+    draw(ease(prog));
+    if(prog<1)raf=requestAnimationFrame(frame);
+  }
+  function _drawFinal(){draw(1)}
+  function play(){
+    cancelAnimationFrame(raf);t0=0;
+    if(reduce||from===to){prog=1;_drawFinal();return}
+    prog=0;raf=requestAnimationFrame(frame);
+  }
+
+  // selects
+  var selFrom=document.getElementById("from"),selTo=document.getElementById("to");
+  function fill(sel,val){
+    var pl=CITIES.filter(function(c){return c.g}),eu=CITIES.filter(function(c){return !c.g});
+    function og(label,list){var g=document.createElement("optgroup");g.label=label;list.forEach(function(c){var o=document.createElement("option");o.value=o.textContent=c.n;g.appendChild(o)});return g}
+    sel.appendChild(og("Polska",pl));sel.appendChild(og("Europa",eu));sel.value=val;
+  }
+  fill(selFrom,"Bielawa");fill(selTo,"Monachium");
+
+  var msg=document.getElementById("msg"),dirty=false;
+  msg.addEventListener("input",function(){dirty=true});
+  var kmEl=document.getElementById("km"),nameEl=document.getElementById("routeName"),cta=document.getElementById("cta"),rl=document.getElementById("routeLine");
+  function routeText(){return from.n+" – "+to.n}
+  function update(animate){
+    from=byName[selFrom.value];to=byName[selTo.value];
+    var same=from===to;
+    if(same){
+      kmEl.textContent="0";nameEl.textContent="Wybierz dwa różne miasta";
+      cta.setAttribute("aria-disabled","true");cta.removeAttribute("href");
+    }else{
+      kmEl.textContent=Math.round(haversine(from,to)).toLocaleString("pl-PL");
+      nameEl.innerHTML="";nameEl.appendChild(document.createTextNode(from.n+" "));
+      var em=document.createElement("em");em.textContent="–";nameEl.appendChild(em);nameEl.appendChild(document.createTextNode(" "+to.n));
+      cta.removeAttribute("aria-disabled");cta.setAttribute("href","#kontakt");
+      rl.textContent=routeText();
+      if(!dirty)msg.value="Trasa: "+routeText();
+    }
+    cv.setAttribute("aria-label","Schematyczna mapa Europy. Trasa: "+routeText()+(same?"":", "+kmEl.textContent+" km w linii prostej"));
+    if(animate)play();else{prog=1;_drawFinal()}
+  }
+  selFrom.addEventListener("change",function(){update(true)});
+  selTo.addEventListener("change",function(){update(true)});
+  document.getElementById("swap").addEventListener("click",function(){var a=selFrom.value;selFrom.value=selTo.value;selTo.value=a;update(true)});
+  cta.addEventListener("click",function(e){if(cta.getAttribute("aria-disabled")==="true"){e.preventDefault()}});
+
+  var rzT;
+  window.addEventListener("resize",function(){clearTimeout(rzT);rzT=setTimeout(function(){layout();_drawFinal()},80)});
+  function init(){layout();update(false);prog=0;play()}
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){layout();if(prog>=1)_drawFinal()});
+  init();
+
+  // form
+  var form=document.getElementById("form"),status=document.getElementById("status");
+  function setErr(id,t){var el=document.getElementById(id),e=document.getElementById("e-"+id);e.textContent=t;if(t)el.setAttribute("aria-invalid","true");else el.removeAttribute("aria-invalid");return !t}
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var name=form.name.value.trim(),mail=form.email.value.trim(),ph=form.phone.value.trim(),ok=true,first=null;
+    function chk(id,good,text){var r=setErr(id,good?"":text);if(!r){ok=false;if(!first)first=document.getElementById(id)}}
+    chk("name",name.length>=3&&/\s/.test(name),"Podaj imię i nazwisko.");
+    chk("email",/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail),"Podaj poprawny adres e-mail.");
+    chk("phone",ph.replace(/\D/g,"").length>=9,"Podaj numer telefonu (co najmniej 9 cyfr).");
+    if(!ok){status.textContent="Popraw zaznaczone pola.";first.focus();return}
+    var body="Imię i nazwisko: "+name+"\nE-mail: "+mail+"\nTelefon: "+ph+"\n\n"+(form.msg.value.trim()||("Trasa: "+routeText()));
+    var subject="Zapytanie o wycenę – "+routeText();
+    status.textContent="Otwieramy Twój program pocztowy. Jeśli nic się nie stało, napisz na office@massivegroup.com.pl.";
+    window.location.href="mailto:office@massivegroup.com.pl?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  });
+  ["name","email","phone"].forEach(function(id){document.getElementById(id).addEventListener("input",function(){setErr(id,"")})});
+})();
+</script>
+</body>
+</html>
