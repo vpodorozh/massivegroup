@@ -6,7 +6,7 @@
 <title>Massive Group – międzynarodowy transport drogowy z Wysokiej</title>
 <meta name="description" content="Massive Group – międzynarodowa firma transportowa z Wysokiej, od 2017 roku. Transport międzynarodowy i krajowy, nowoczesna flota, dostawy na czas. Zapytaj o wycenę.">
 <meta name="theme-color" content="#070606">
-<link rel="icon" href="assets/logo-mark.png" type="image/png">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
@@ -93,11 +93,10 @@ section{position:relative}
 .route{background:var(--coal);overflow:hidden}
 .route .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
 .route .head p{color:var(--mute);max-width:30em;font-size:19px;justify-self:end}
-.map{margin-top:clamp(40px,6vw,80px);position:relative}
-.map svg{width:100%;height:auto;display:block;overflow:visible}
-.map .trail{stroke-dasharray:22 16;animation:dash2 1.4s linear infinite}
-@keyframes dash2{to{stroke-dashoffset:-38}}
-.map text{font-family:var(--f);fill:var(--ink)}
+.map{margin-top:clamp(40px,6vw,80px);position:relative;border:1px solid var(--line)}
+#map{width:100%;height:clamp(420px,62vw,640px);background:#0d0a0a}
+#map{display:block;width:100%;aspect-ratio:1.45/1;background:#0d0a0a}
+@media (max-width:900px){#map{aspect-ratio:1/1.05}}
 .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:20px}
 .legend div{border-top:3px solid var(--red);padding-top:14px}
 .legend strong{display:block;font-stretch:70%;font-weight:800;font-size:clamp(26px,3vw,40px);line-height:1}
@@ -124,7 +123,7 @@ section{position:relative}
 
 /* CONTACT */
 .contact{background:linear-gradient(180deg,var(--night),#160909);overflow:hidden}
-.contact::before{content:"";position:absolute;right:-8vw;bottom:-6vw;width:min(60vw,820px);aspect-ratio:680/512;background:url(assets/logo-mark.png) center/contain no-repeat;opacity:.1;pointer-events:none}
+.contact::before{content:"";position:absolute;right:-8vw;bottom:-6vw;width:min(60vw,820px);aspect-ratio:680/512;background:url(assets/logo-mark.svg) center/contain no-repeat;opacity:.1;pointer-events:none}
 .cwrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,120px);position:relative}
 .cdata{margin-top:36px;font-style:normal;display:grid;gap:22px}
 .cdata dt{color:var(--mute);font-size:15px}
@@ -173,6 +172,7 @@ footer img{height:22px;display:inline-block;vertical-align:middle;margin-right:1
   footer .wrap{flex-direction:column;align-items:flex-start}
 }
 @media (prefers-reduced-motion:reduce){
+  
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .hero-mark{--m:112%}
   .beam{display:none}
@@ -185,7 +185,7 @@ footer img{height:22px;display:inline-block;vertical-align:middle;margin-right:1
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Massive Group – strona główna">
-      <img src="assets/logo-mark.png" alt="" width="40" height="30">
+      <img src="assets/logo-mark.svg" alt="" width="40" height="30">
       <span>MASSIVE GROUP</span>
     </a>
     <nav aria-label="Główna">
@@ -203,7 +203,7 @@ footer img{height:22px;display:inline-block;vertical-align:middle;margin-right:1
 
 <main id="main">
 <section class="hero" id="top" aria-labelledby="h1">
-  <div class="hero-mark" aria-hidden="true"><img src="assets/logo-mark.png" alt="" width="680" height="512"></div>
+  <div class="hero-mark" aria-hidden="true"><img src="assets/logo-mark.svg" alt="" width="680" height="512"></div>
   <span class="beam a" aria-hidden="true"></span><span class="beam b" aria-hidden="true"></span>
   <div class="wrap hero-copy">
     <h1 id="h1">Ładunek jedzie.<em>Na czas.</em></h1>
@@ -252,20 +252,8 @@ footer img{height:22px;display:inline-block;vertical-align:middle;margin-right:1
       <p>Startujemy na Dolnym Śląsku. Jedziemy w kraju i za granicę, wszędzie tam, gdzie czeka ładunek.</p>
     </div>
     <div class="map">
-      <svg viewBox="0 0 1200 360" role="img" aria-label="Schemat trasy: Wysoka, Polska, Unia Europejska">
-        <defs>
-          <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#F51818"/><stop offset="1" stop-color="#7a0808" stop-opacity=".25"/></linearGradient>
-        </defs>
-        <path d="M60 290 C 300 290, 380 90, 640 150 S 980 60, 1160 40" fill="none" stroke="#2c2222" stroke-width="22" stroke-linecap="round"/>
-        <path class="trail" d="M60 290 C 300 290, 380 90, 640 150 S 980 60, 1160 40" fill="none" stroke="url(#g)" stroke-width="5"/>
-        <circle cx="60" cy="290" r="14" fill="#D10F0F"/><circle cx="60" cy="290" r="26" fill="none" stroke="#F51818" stroke-opacity=".5"/>
-        <circle cx="640" cy="150" r="9" fill="#f3eeee"/>
-        <circle cx="1160" cy="40" r="9" fill="#f3eeee"/>
-        <text x="96" y="338" font-size="34" font-weight="800" style="font-stretch:70%">Wysoka</text>
-        <text x="610" y="206" font-size="34" font-weight="800" style="font-stretch:70%">Polska</text>
-        <text x="880" y="30" font-size="34" font-weight="800" style="font-stretch:70%" text-anchor="start">Unia Europejska</text>
-      </svg>
-    </div>
+      <canvas id="map" role="img" aria-label="Mapa Europy z trasami z Wysokiej do największych miast: Berlin, Praga, Wiedeń, Monachium, Paryż, Amsterdam, Mediolan, Madryt, Budapeszt, Kopenhaga, Warszawa, Bruksela"></canvas>
+          </div>
     <div class="legend">
       <div><strong>Siedziba</strong><span>Jasna 9 / 8, 52-200 Wysoka</span></div>
       <div><strong>Kraj</strong><span>Transport krajowy</span></div>
@@ -341,11 +329,95 @@ footer img{height:22px;display:inline-block;vertical-align:middle;margin-right:1
 
 <footer>
   <div class="wrap">
-    <span><img src="assets/logo-mark.png" alt="">&copy; Massive Group</span>
+    <span><img src="assets/logo-mark.svg" alt="">&copy; Massive Group</span>
     <span>Jasna 9 / 8, 52-200 Wysoka, Polska</span>
   </div>
 </footer>
 
+<script>
+(function(){
+  var HQ={n:"Wysoka",lon:17.00,lat:51.05};
+  var DEST=[{n:"Berlin",lon:13.40,lat:52.52},{n:"Praga",lon:14.42,lat:50.08},{n:"Wiedeń",lon:16.37,lat:48.21},{n:"Monachium",lon:11.58,lat:48.14},{n:"Paryż",lon:2.35,lat:48.86},{n:"Amsterdam",lon:4.90,lat:52.37},{n:"Mediolan",lon:9.19,lat:45.46},{n:"Madryt",lon:-3.70,lat:40.42},{n:"Budapeszt",lon:19.04,lat:47.50},{n:"Kopenhaga",lon:12.57,lat:55.68},{n:"Warszawa",lon:21.01,lat:52.23},{n:"Bruksela",lon:4.35,lat:50.85}];
+  // coarse land polygons [lon,lat]
+  var LAND=[
+    [[-9.5,37],[-7,37],[-5.3,36],[-2,36.8],[-.5,38.7],[.5,40.5],[3,42.4],[4,43.4],[6,43],[7.5,43.8],[8.8,44.4],[10.5,43.5],[12,42],[14,40.8],[15.7,40],[16,39.5],[15.7,38],[16.5,39],[17,39.3],[18.5,40.2],[16,41.9],[14.5,42.2],[13.6,43.5],[12.5,44],[12.3,45.3],[13.5,45.7],[14.5,45],[16,43.5],[18.5,42.5],[19.4,41.8],[19.5,40],[21,38],[22.5,36.5],[23.5,38],[24,40],[26.5,41],[28,42],[28.5,44],[30,45.5],[33,45.5],[33,60],[28,59.8],[24,59.4],[24,57.3],[21,57],[21,55],[18.5,54.7],[14,54],[12,54.2],[10,54.8],[10.8,56],[10.5,57.7],[8,57],[8.5,54],[5,53],[3.5,51.3],[1.5,50.5],[-1.5,48.7],[-4.5,48],[-1.5,46],[-2,43.5],[-9.2,43],[-9,39]],
+    [[5,58.5],[5,62],[10,64],[14,67.5],[18,69.5],[25,71],[33,70],[33,61],[29,61.2],[28,60.5],[23,60],[21.5,61],[21.5,63],[25,65.5],[22,65.8],[17.5,62.5],[18.5,60.5],[16.5,57.5],[14.5,56],[12.5,56],[11,58.5],[8,58]],
+    [[-5.5,50],[1.5,51],[1.7,52.7],[0,53.5],[-1.5,55],[-2,57.5],[-3.5,58.6],[-5.5,58.5],[-6,56.5],[-5,55],[-3,54.8],[-3,53.4],[-4.7,52.8],[-4.2,51.6]],
+    [[-10,51.7],[-6,52],[-6,54],[-7.5,55.3],[-9,54.2],[-10,53]],
+    [[12.5,37.6],[12.5,38],[15.6,38.2],[15,36.7]],
+    [[8.2,41],[9.7,41],[9.6,39],[8.5,39]],
+    [[10.9,55.2],[12.3,55.4],[12.5,56],[11,56]]
+  ];
+  var POLAND=[[14.2,53.9],[14.1,52.8],[15,51],[16.5,50.2],[18.8,49.5],[22.5,49],[24.1,50.4],[23.5,52.2],[23.5,53.9],[19.5,54.4]];
+  var LON0=-8,LON1=25,LAT0=39,LAT1=57,K=Math.cos(50*Math.PI/180);
+  function inPoly(p,x,y){var c=false;for(var i=0,j=p.length-1;i<p.length;j=i++){var a=p[i],b=p[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c}
+  function onLand(x,y){for(var i=0;i<LAND.length;i++)if(inPoly(LAND[i],x,y))return true;return false}
+  var cv=document.getElementById("map"),ctx=cv.getContext("2d"),base=document.createElement("canvas"),bctx=base.getContext("2d");
+  var W=0,H=0,dpr=1,S=1,OX=0,OY=0,reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  function P(lon,lat){return[OX+(lon-LON0)*K*S,OY+(LAT1-lat)*S]}
+  function layout(){
+    var r=cv.getBoundingClientRect();if(!r.width)return;
+    dpr=Math.min(Math.max(window.devicePixelRatio||1,2),3);W=r.width;H=r.height;
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);base.width=cv.width;base.height=cv.height;
+    var wu=(LON1-LON0)*K,hu=LAT1-LAT0,pad=14;
+    S=Math.min((W-2*pad)/wu,(H-2*pad)/hu);OX=(W-wu*S)/2;OY=(H-hu*S)/2;drawBase();
+  }
+  function drawBase(){
+    var c=bctx;c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,H);
+    var step=W<500?6:8,x0=P(LON0,LAT1),x1=P(LON1,LAT0),rr=step*(W<500?.34:.4);
+    for(var y=x0[1]+step/2;y<x1[1];y+=step)for(var x=x0[0]+step/2;x<x1[0];x+=step){
+      var lon=LON0+(x-OX)/(K*S),lat=LAT1-(y-OY)/S;
+      if(!onLand(lon,lat))continue;
+      c.fillStyle=inPoly(POLAND,lon,lat)?"#7a2226":"#35302f";
+      c.beginPath();c.arc(x,y,rr,0,6.283);c.fill();
+    }
+  }
+  function curve(a,b,bend){
+    var dx=b[0]-a[0],dy=b[1]-a[1],len=Math.hypot(dx,dy)||1,nx=-dy/len,ny=dx/len;
+    if(ny>0){nx=-nx;ny=-ny}
+    return{a:a,b:b,c:[(a[0]+b[0])/2+nx*len*bend,(a[1]+b[1])/2+ny*len*bend]};
+  }
+  function pt(cu,t){var u=1-t;return[u*u*cu.a[0]+2*u*t*cu.c[0]+t*t*cu.b[0],u*u*cu.a[1]+2*u*t*cu.c[1]+t*t*cu.b[1]]}
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  function halo(text,x,y,align,color,font){
+    ctx.font=font;ctx.textAlign=align;ctx.textBaseline="middle";ctx.lineWidth=4;ctx.strokeStyle="#0d0a0a";ctx.lineJoin="round";
+    ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);
+  }
+  var T0=0,DUR=2400,STAG=.06,done=false;
+  function draw(ts){
+    var el=reduce?1e9:(ts-T0);
+    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);ctx.drawImage(base,0,0,W,H);
+    var A=P(HQ.lon,HQ.lat),fs=W<560?11:13,fnt="600 "+fs+"px Archivo,system-ui,sans-serif",dash=(el/60)%20;
+    DEST.forEach(function(d,i){
+      var B=P(d.lon,d.lat),cu=curve(A,B,.2*(i%2?1:-1)*0+.18),p=Math.max(0,Math.min(1,(el-i*DUR*STAG)/DUR*1.6)),q=ease(p);
+      if(q>0){
+        ctx.lineCap="round";ctx.setLineDash([9,7]);ctx.lineDashOffset=-dash;
+        ctx.lineWidth=5;ctx.strokeStyle="rgba(245,24,24,.18)";
+        ctx.beginPath();var n=Math.max(2,Math.ceil(80*q));
+        for(var k=0;k<=n;k++){var m=pt(cu,q*k/n);k?ctx.lineTo(m[0],m[1]):ctx.moveTo(m[0],m[1])}ctx.stroke();
+        ctx.lineWidth=2;ctx.strokeStyle="#ff2a33";ctx.stroke();ctx.setLineDash([]);
+      }
+      if(q>.98||reduce){
+        ctx.fillStyle="#fff";ctx.strokeStyle="#D10F0F";ctx.lineWidth=2;ctx.beginPath();ctx.arc(B[0],B[1],4.5,0,6.283);ctx.fill();ctx.stroke();
+        var left=d.lon>=HQ.lon?false:true;
+        halo(d.n,B[0]+(left?-9:9),B[1]-1,left?"right":"left","#f3eeee",fnt);
+      }
+    });
+    var pulse=reduce?0:((el/1200)%1);
+    ctx.strokeStyle="rgba(245,24,24,"+(1-pulse)+")";ctx.lineWidth=2;ctx.beginPath();ctx.arc(A[0],A[1],8+pulse*18,0,6.283);ctx.stroke();
+    ctx.fillStyle="#D10F0F";ctx.strokeStyle="#fff";ctx.lineWidth=3;ctx.beginPath();ctx.arc(A[0],A[1],8,0,6.283);ctx.fill();ctx.stroke();
+    halo("WYSOKA",A[0]+13,A[1]+17,"left","#fff","800 "+(fs+3)+"px Archivo,system-ui,sans-serif");
+  }
+  var raf=0,visible=false;
+  function loop(ts){if(!T0)T0=ts;draw(ts);if(visible&&!reduce)raf=requestAnimationFrame(loop)}
+  function start(){if(raf)return;raf=requestAnimationFrame(function f(ts){raf=0;loop(ts);if(visible&&!reduce)raf=requestAnimationFrame(f)})}
+  layout();draw(0);
+  new IntersectionObserver(function(e){visible=e[0].isIntersecting;if(visible){T0=0;start()}},{threshold:.25}).observe(cv);
+  if(reduce)draw(0);
+  var rz;addEventListener("resize",function(){clearTimeout(rz);rz=setTimeout(function(){layout();draw(T0?performance.now():0)},80)});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){draw(performance.now())});
+})();
+</script>
 <script>
 (function(){
   var nav=document.getElementById('nav');
